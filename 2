@@ -1,0 +1,73 @@
+using UnityEngine;
+
+public class PanelSwiper : MonoBehaviour
+{
+    public RectTransform mainPanel;
+    public RectTransform upgradePanel;
+
+    private Vector2 mainStartPos;
+    private Vector2 upgradeStartPos;
+
+    private Vector2 targetMainPos;
+    private Vector2 targetUpgradePos;
+
+    public float swipeThreshold = 50f; // 얼마나 스와이프해야 넘어갈지
+    public float slideSpeed = 10f;
+
+    private Vector2 touchStart;
+
+    void Start()
+    {
+        mainStartPos = mainPanel.anchoredPosition;
+        upgradeStartPos = upgradePanel.anchoredPosition;
+
+        targetMainPos = mainStartPos;
+        targetUpgradePos = upgradeStartPos;
+    }
+
+    void Update()
+    {
+        HandleSwipe();
+        SmoothSlide();
+    }
+
+    void HandleSwipe()
+    {
+        if (Input.touchCount == 1)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            if (touch.phase == TouchPhase.Began)
+            {
+                touchStart = touch.position;
+            }
+
+            if (touch.phase == TouchPhase.Ended)
+            {
+                float deltaX = touch.position.x - touchStart.x;
+
+                if (Mathf.Abs(deltaX) > swipeThreshold)
+                {
+                    if (deltaX < 0)
+                    {
+                        // 스와이프 왼쪽 → 강화 화면으로
+                        targetMainPos = mainStartPos - new Vector2(Screen.width, 0);
+                        targetUpgradePos = upgradeStartPos - new Vector2(Screen.width, 0);
+                    }
+                    else
+                    {
+                        // 스와이프 오른쪽 → 메인 화면으로
+                        targetMainPos = mainStartPos;
+                        targetUpgradePos = upgradeStartPos;
+                    }
+                }
+            }
+        }
+    }
+
+    void SmoothSlide()
+    {
+        mainPanel.anchoredPosition = Vector2.Lerp(mainPanel.anchoredPosition, targetMainPos, Time.deltaTime * slideSpeed);
+        upgradePanel.anchoredPosition = Vector2.Lerp(upgradePanel.anchoredPosition, targetUpgradePos, Time.deltaTime * slideSpeed);
+    }
+}
