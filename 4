@@ -1,0 +1,21 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class SceneTransition : MonoBehaviour
+{
+    public string sceneName; // 넘어갈 씬의 이름
+
+    public void ChangeScene()
+    {
+        StartCoroutine(TransitionToScene());
+    }
+
+    private IEnumerator TransitionToScene()
+    {
+        // 씬을 천천히 숨기기 애니메이션
+        // 예: 화면을 어두운 색으로 서서히 변환
+
+        yield return new WaitForSeconds(1f); // 전환이 완료되면 씬 로드
+        SceneManager.LoadScene(sceneName);
+    }
+}
