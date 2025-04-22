@@ -1,0 +1,45 @@
+using UnityEngine;
+
+public class PanelSwiper : MonoBehaviour
+{
+    public RectTransform mainPanel;
+    public RectTransform upgradePanel;
+
+    private Vector2 mainTargetPos;
+    private Vector2 upgradeTargetPos;
+    private bool isSliding = false;
+    public float slideSpeed = 10f;
+
+    void Start()
+    {
+        float screenWidth = Screen.width;
+
+        // 시작 위치 설정
+        mainPanel.anchoredPosition = new Vector2(0, 0);
+        upgradePanel.anchoredPosition = new Vector2(screenWidth, 0);
+    }
+
+    public void SlideToUpgrade()
+    {
+        float screenWidth = Screen.width;
+        mainTargetPos = new Vector2(-screenWidth, 0);
+        upgradeTargetPos = new Vector2(0, 0);
+        isSliding = true;
+    }
+
+    void Update()
+    {
+        if (isSliding)
+        {
+            mainPanel.anchoredPosition = Vector2.Lerp(mainPanel.anchoredPosition, mainTargetPos, Time.deltaTime * slideSpeed);
+            upgradePanel.anchoredPosition = Vector2.Lerp(upgradePanel.anchoredPosition, upgradeTargetPos, Time.deltaTime * slideSpeed);
+
+            if (Vector2.Distance(mainPanel.anchoredPosition, mainTargetPos) < 0.1f)
+            {
+                isSliding = false;
+                mainPanel.anchoredPosition = mainTargetPos;
+                upgradePanel.anchoredPosition = upgradeTargetPos;
+            }
+        }
+    }
+}
