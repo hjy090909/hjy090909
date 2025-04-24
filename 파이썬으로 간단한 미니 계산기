@@ -1,0 +1,17 @@
+def calculator():
+    print("간단한 계산기입니다!")
+    print("사용 방법: 숫자 연산자 숫자 (예: 3 + 5)")
+    
+    while True:
+        expression = input("계산식을 입력하세요 (종료하려면 'exit' 입력): ")
+        if expression.lower() == 'exit':
+            print("계산기를 종료합니다.")
+            break
+
+        try:
+            result = eval(expression)
+            print(f"결과: {result}")
+        except:
+            print("올바른 식을 입력하세요!")
+
+calculator()
