@@ -1,0 +1,11 @@
+import random
+
+def generate_nickname():
+    adjectives = ['멋진', '용감한', '날렵한', '신비한', '화려한', '귀여운']
+    nouns = ['호랑이', '늑대', '용', '독수리', '고양이', '판다']
+
+    nickname = random.choice(adjectives) + random.choice(nouns) + str(random.randint(1, 9999))
+    return nickname
+
+for _ in range(5):
+    print(generate_nickname())
