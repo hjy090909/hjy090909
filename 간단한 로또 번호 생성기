@@ -1,0 +1,9 @@
+import random
+
+def lotto_numbers():
+    numbers = random.sample(range(1, 46), 6)
+    numbers.sort()
+    return numbers
+
+print("이번 주 행운의 번호는?! 🎉")
+print(lotto_numbers())
