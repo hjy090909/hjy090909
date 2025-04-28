@@ -1,0 +1,77 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+const int SIZE = 10;
+char map[SIZE][SIZE];
+int playerX, playerY;
+int exitX, exitY;
+
+void printMap() {
+    system("clear"); // 윈도우면 "cls"
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            cout << map[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+void initMap() {
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            if (rand() % 4 == 0) map[i][j] = '#'; // 25% 확률 벽
+            else map[i][j] = '.';
+        }
+    }
+
+    playerX = 0;
+    playerY = 0;
+    map[playerX][playerY] = 'P';
+
+    exitX = SIZE - 1;
+    exitY = SIZE - 1;
+    map[exitX][exitY] = 'E';
+}
+
+void movePlayer(char dir) {
+    int newX = playerX;
+    int newY = playerY;
+
+    if (dir == 'w') newX--;
+    else if (dir == 's') newX++;
+    else if (dir == 'a') newY--;
+    else if (dir == 'd') newY++;
+
+    if (newX < 0 || newX >= SIZE || newY < 0 || newY >= SIZE) return;
+    if (map[newX][newY] == '#') return;
+
+    map[playerX][playerY] = '.';
+    playerX = newX;
+    playerY = newY;
+    map[playerX][playerY] = 'P';
+}
+
+int main() {
+    srand(time(0));
+    initMap();
+
+    while (true) {
+        printMap();
+
+        if (playerX == exitX && playerY == exitY) {
+            cout << "탈출 성공!" << endl;
+            break;
+        }
+
+        cout << "이동 (WASD): ";
+        char input;
+        cin >> input;
+
+        movePlayer(input);
+    }
+
+    return 0;
+}
