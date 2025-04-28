@@ -1,0 +1,63 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <thread>
+#include <chrono>
+
+using namespace std;
+
+int getRandom(int min, int max) {
+    return rand() % (max - min + 1) + min;
+}
+
+void wait(int ms) {
+    this_thread::sleep_for(chrono::milliseconds(ms));
+}
+
+int main() {
+    srand(time(0));
+
+    int playerHP = 100;
+    int monsterHP = 100;
+
+    cout << "===== 텍스트 RPG 배틀 =====" << endl;
+
+    while (playerHP > 0 && monsterHP > 0) {
+        cout << "\n당신의 차례!" << endl;
+        int damage = getRandom(10, 20);
+        bool critical = (getRandom(1, 100) <= 20);  // 20% 크리티컬
+
+        if (critical) {
+            damage *= 2;
+            cout << "크리티컬 히트!" << endl;
+        }
+
+        monsterHP -= damage;
+        if (monsterHP < 0) monsterHP = 0;
+        cout << "몬스터에게 " << damage << " 데미지! (몬스터 HP: " << monsterHP << ")" << endl;
+
+        if (monsterHP == 0) {
+            cout << "\n몬스터를 물리쳤습니다!" << endl;
+            break;
+        }
+
+        wait(1000); // 1초 대기
+
+        cout << "\n몬스터의 차례!" << endl;
+        int monsterDamage = getRandom(5, 15);
+        playerHP -= monsterDamage;
+        if (playerHP < 0) playerHP = 0;
+        cout << "당신이 " << monsterDamage << " 데미지를 입었습니다! (당신 HP: " << playerHP << ")" << endl;
+
+        if (playerHP == 0) {
+            cout << "\n당신은 쓰러졌습니다...!" << endl;
+            break;
+        }
+
+        wait(1000);
+    }
+
+    cout << "\n===== 전투 종료 =====" << endl;
+
+    return 0;
+}
