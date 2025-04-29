@@ -1,0 +1,6 @@
+min_val = np.min(data)
+max_val = np.max(data)
+
+normalized_data = (data - min_val) / (max_val - min_val)
+
+print("정규화 결과:", normalized_data)
