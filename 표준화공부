@@ -1,0 +1,10 @@
+import numpy as np
+
+data = np.array([10, 20, 30, 40, 50])
+
+mean = np.mean(data)
+std = np.std(data)
+
+standardized_data = (data - mean) / std
+
+print("표준화 결과:", standardized_data)
