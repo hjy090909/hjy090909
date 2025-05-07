@@ -1,0 +1,29 @@
+using System;
+
+class Calculator
+{
+    static void Main()
+    {
+        Console.WriteLine("숫자 1 입력:");
+        double num1 = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("연산자 입력 (+, -, *, /):");
+        string op = Console.ReadLine();
+
+        Console.WriteLine("숫자 2 입력:");
+        double num2 = Convert.ToDouble(Console.ReadLine());
+
+        double result = 0;
+
+        switch (op)
+        {
+            case "+": result = num1 + num2; break;
+            case "-": result = num1 - num2; break;
+            case "*": result = num1 * num2; break;
+            case "/": result = num1 / num2; break;
+            default: Console.WriteLine("잘못된 연산자!"); return;
+        }
+
+        Console.WriteLine("결과: " + result);
+    }
+}
