@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#circle {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: red;
+  position: absolute;
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+
+<div id="circle"></div>
+
+<script>
+document.addEventListener("mousemove", function(e) {
+  const circle = document.getElementById("circle");
+  circle.style.left = (e.pageX - 15) + "px";
+  circle.style.top = (e.pageY - 15) + "px";
+});
+</script>
+
+</body>
+</html>
