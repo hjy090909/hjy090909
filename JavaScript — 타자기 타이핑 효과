@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 id="text"></h1>
+
+<script>
+const message = "안녕하세요, 반가워요!";
+let i = 0;
+
+function typeEffect() {
+  if (i < message.length) {
+    document.getElementById("text").innerHTML += message.charAt(i);
+    i++;
+    setTimeout(typeEffect, 200);
+  }
+}
+typeEffect();
+</script>
+
+</body>
+</html>
