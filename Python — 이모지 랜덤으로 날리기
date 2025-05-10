@@ -1,0 +1,5 @@
+import random
+
+emojis = ['😊', '😂', '🔥', '❤️', '🎉', '👍']
+for _ in range(10):
+    print(random.choice(emojis), end=' ')
