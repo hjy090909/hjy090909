@@ -1,0 +1,19 @@
+using System;
+
+class MathQuiz
+{
+    static void Main()
+    {
+        Random rand = new Random();
+        int a = rand.Next(1, 10);
+        int b = rand.Next(1, 10);
+
+        Console.WriteLine($"{a} + {b} = ?");
+        int answer = int.Parse(Console.ReadLine());
+
+        if (answer == a + b)
+            Console.WriteLine("정답!");
+        else
+            Console.WriteLine($"틀렸어요! 정답은 {a + b}");
+    }
+}
