@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>키보드 누르면 여기 표시됨:</h2>
+<p id="key"></p>
+
+<script>
+document.addEventListener("keydown", function(event) {
+  document.getElementById("key").innerText = "입력한 키: " + event.key;
+});
+</script>
+
+</body>
+</html>
