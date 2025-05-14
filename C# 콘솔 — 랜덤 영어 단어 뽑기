@@ -1,0 +1,13 @@
+using System;
+
+class WordPicker
+{
+    static void Main()
+    {
+        string[] words = { "apple", "banana", "computer", "hello", "world" };
+        Random rand = new Random();
+        int index = rand.Next(words.Length);
+
+        Console.WriteLine("랜덤 단어: " + words[index]);
+    }
+}
