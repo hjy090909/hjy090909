@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="showQuote()">명언 보기</button>
+<p id="quote"></p>
+
+<script>
+function showQuote() {
+  const quotes = [
+    "행동이 운명을 만든다.",
+    "포기하지 마라.",
+    "오늘도 화이팅!",
+    "할 수 있다!"
+  ];
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  document.getElementById("quote").innerText = quotes[randomIndex];
+}
+</script>
+
+</body>
+</html>
