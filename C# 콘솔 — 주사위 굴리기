@@ -1,0 +1,11 @@
+using System;
+
+class DiceGame
+{
+    static void Main()
+    {
+        Random rand = new Random();
+        int dice = rand.Next(1, 7);
+        Console.WriteLine("주사위 굴리기 결과: " + dice);
+    }
+}
