@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="changeBg()">배경색 바꾸기</button>
+
+<script>
+function changeBg() {
+  const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+  document.body.style.backgroundColor = randomColor;
+}
+</script>
+
+</body>
+</html>
