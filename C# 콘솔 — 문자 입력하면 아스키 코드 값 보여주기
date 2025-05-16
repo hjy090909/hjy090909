@@ -1,0 +1,11 @@
+using System;
+
+class AsciiValue
+{
+    static void Main()
+    {
+        Console.WriteLine("문자 하나 입력:");
+        char c = Console.ReadKey().KeyChar;
+        Console.WriteLine($"\n'{c}'의 아스키 코드 값: {(int)c}");
+    }
+}
