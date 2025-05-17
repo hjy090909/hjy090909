@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="follow" style="position:absolute; color:red;">★</div>
+
+<script>
+document.addEventListener("mousemove", function(e) {
+  let star = document.getElementById("follow");
+  star.style.left = e.pageX + "px";
+  star.style.top = e.pageY + "px";
+});
+</script>
+
+</body>
+</html>
