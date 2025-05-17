@@ -1,0 +1,13 @@
+using System;
+
+class PickRandom
+{
+    static void Main()
+    {
+        string[] items = { "🍎", "🍌", "🍒", "🍇", "🍍" };
+        Random rand = new Random();
+        int pick = rand.Next(items.Length);
+
+        Console.WriteLine("랜덤 뽑기 결과: " + items[pick]);
+    }
+}
