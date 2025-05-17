@@ -1,0 +1,3 @@
+text = input("문장을 입력하세요: ")
+reversed_text = text[::-1]
+print("거꾸로 출력:", reversed_text)
