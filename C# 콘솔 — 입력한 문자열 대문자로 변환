@@ -1,0 +1,12 @@
+using System;
+
+class ToUpper
+{
+    static void Main()
+    {
+        Console.WriteLine("문자열을 입력하세요:");
+        string input = Console.ReadLine();
+
+        Console.WriteLine("대문자 변환: " + input.ToUpper());
+    }
+}
