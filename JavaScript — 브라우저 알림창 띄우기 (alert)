@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="showAlert()">클릭!</button>
+
+<script>
+function showAlert() {
+  alert("안녕하세요! 깜짝 알림이에요 😁");
+}
+</script>
+
+</body>
+</html>
