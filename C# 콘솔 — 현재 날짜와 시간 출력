@@ -1,0 +1,10 @@
+using System;
+
+class ShowDateTime
+{
+    static void Main()
+    {
+        DateTime now = DateTime.Now;
+        Console.WriteLine("현재 날짜와 시간: " + now);
+    }
+}
