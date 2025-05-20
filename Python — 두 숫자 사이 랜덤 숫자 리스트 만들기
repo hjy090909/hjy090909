@@ -1,0 +1,8 @@
+import random
+
+start = int(input("시작 숫자: "))
+end = int(input("끝 숫자: "))
+count = int(input("몇 개 뽑을까요? "))
+
+random_numbers = [random.randint(start, end) for _ in range(count)]
+print("랜덤 숫자 목록:", random_numbers)
