@@ -1,0 +1,11 @@
+using System;
+
+class StringLength
+{
+    static void Main()
+    {
+        Console.WriteLine("문자열을 입력하세요:");
+        string text = Console.ReadLine();
+        Console.WriteLine("문자 수: " + text.Length);
+    }
+}
