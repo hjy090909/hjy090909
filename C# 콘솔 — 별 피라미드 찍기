@@ -1,0 +1,15 @@
+using System;
+
+class StarPyramid
+{
+    static void Main()
+    {
+        Console.WriteLine("몇 줄로 찍을까요?");
+        int n = int.Parse(Console.ReadLine());
+
+        for (int i = 1; i <= n; i++)
+        {
+            Console.WriteLine(new string('*', i));
+        }
+    }
+}
