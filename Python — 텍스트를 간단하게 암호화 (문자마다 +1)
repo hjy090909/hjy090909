@@ -1,0 +1,7 @@
+text = input("암호화할 문장: ")
+encrypted = ""
+
+for char in text:
+    encrypted += chr(ord(char) + 1)
+
+print("암호화된 문장:", encrypted)
