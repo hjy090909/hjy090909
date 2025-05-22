@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="playSound()">소리 재생!</button>
+
+<audio id="sound">
+  <source src="sound.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function playSound() {
+  document.getElementById("sound").play();
+}
+</script>
+
+</body>
+</html>
