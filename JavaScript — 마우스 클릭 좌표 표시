@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body onclick="showCoords(event)">
+
+<p id="coords"></p>
+
+<script>
+function showCoords(e) {
+  document.getElementById("coords").innerText = `X: ${e.clientX}, Y: ${e.clientY}`;
+}
+</script>
+
+</body>
+</html>
