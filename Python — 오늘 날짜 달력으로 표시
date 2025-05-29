@@ -1,0 +1,5 @@
+import calendar
+import datetime
+
+today = datetime.date.today()
+print(calendar.month(today.year, today.month))
