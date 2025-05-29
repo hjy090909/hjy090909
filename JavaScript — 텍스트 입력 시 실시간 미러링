@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="text" oninput="mirrorText(this.value)">
+<p id="result"></p>
+
+<script>
+function mirrorText(value) {
+  document.getElementById("result").innerText = value;
+}
+</script>
+
+</body>
+</html>
