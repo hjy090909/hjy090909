@@ -1,0 +1,10 @@
+using System;
+
+class CurrentYear
+{
+    static void Main()
+    {
+        int year = DateTime.Now.Year;
+        Console.WriteLine("현재 연도: " + year);
+    }
+}
