@@ -1,0 +1,23 @@
+using System;
+
+class NumberGuessGame
+{
+    static void Main()
+    {
+        Random rand = new Random();
+        int answer = rand.Next(1, 11);
+        int guess;
+
+        Console.WriteLine("1부터 10 사이 숫자를 맞혀보세요!");
+
+        do
+        {
+            guess = int.Parse(Console.ReadLine());
+            if (guess < answer) Console.WriteLine("더 큰 숫자!");
+            else if (guess > answer) Console.WriteLine("더 작은 숫자!");
+        }
+        while (guess != answer);
+
+        Console.WriteLine("정답!");
+    }
+}
