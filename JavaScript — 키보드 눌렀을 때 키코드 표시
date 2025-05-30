@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body onkeydown="showKey(event)">
+
+<p id="keycode">키를 눌러보세요!</p>
+
+<script>
+function showKey(e) {
+  document.getElementById("keycode").innerText = "Key Code: " + e.keyCode;
+}
+</script>
+
+</body>
+</html>
