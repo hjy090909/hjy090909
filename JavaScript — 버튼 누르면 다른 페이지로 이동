@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="goToPage()">구글로 이동</button>
+
+<script>
+function goToPage() {
+  window.location.href = "https://www.google.com";
+}
+</script>
+
+</body>
+</html>
