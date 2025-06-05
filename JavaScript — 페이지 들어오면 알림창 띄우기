@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<html>
+<body onload="welcome()">
+
+<script>
+function welcome() {
+  alert("사이트에 오신 걸
