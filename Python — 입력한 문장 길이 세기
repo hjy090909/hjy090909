@@ -1,0 +1,2 @@
+text = input("문장 입력: ")
+print("문장 길이:", len(text))
